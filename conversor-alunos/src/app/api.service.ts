@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
+
 interface Imodedas {
   ARS:{
      ask: string,
@@ -42,7 +43,7 @@ export class ApiService {
   constructor(private http:HttpClient) { }
 
 buscarMoedas(){
-   return this.http.get<Imodedas>(`https://economia.awesomeapi.com.br/json/all`)
+   return this.http.get<Imodedas>(`https://economia.awesomeapi.com.br/json/all/`)
 }
 
 

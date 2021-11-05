@@ -12,6 +12,14 @@ import { Page401Component } from './page401/page401.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth'
+
+import { AuthService } from './auth.service';
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +27,6 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     HomeComponent,
     Page401Component,
     CadastroComponent,
-
   ],
   imports: [
     CommonModule,
@@ -28,8 +35,18 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(
+      {
+        apiKey: "AIzaSyDEGbdfa5JN9J76TKC4ymQ6dCJfP71-9Wo",
+        authDomain: "conversor-aluno-cast.firebaseapp.com",
+        projectId: "conversor-aluno-cast",
+        storageBucket: "conversor-aluno-cast.appspot.com",
+        messagingSenderId: "834811597196",
+        appId: "1:834811597196:web:d666ebacdf8899ce6986a9"
+    }
+    ), AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

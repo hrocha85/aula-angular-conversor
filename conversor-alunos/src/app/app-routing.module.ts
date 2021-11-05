@@ -6,6 +6,7 @@ import { Page401Component } from './page401/page401.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { CommonModule } from '@angular/common';
 
+
 const routes: Routes = [
   {path:'', component:LoginComponent},
   {path:'home', component:HomeComponent},

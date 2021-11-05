@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControlName, FormGroupName, FormsModule } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ public senha:any;
 public mostrarCadastro = false;
 
 
-constructor() { }
+constructor( public authService: AuthService ) { }
 
 ngOnInit(): void {
 
@@ -26,13 +27,8 @@ liberarCasdastro(){
 
 
 fazerLogin(){
-console.log("meu login")
-console.log(this.email , "login")
-console.log(this.senha , "senha")
-
+  this.authService.loginWithEmail(this.email,this.senha)
 }
-
-
 
 
 
